@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+    
+</head>
+
+<body>
+    <div id="inner">
+            <h2>Task-2</h2>
+            <form id="myform" onsubmit="submitForm(event)">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" required><br><br>
+
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname"><br><br>
+
+                <label for="birthday">DOB:</label><br>
+                <input type="date" id="birthday" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email"required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message"rows="1" cols="30" required></textarea>
+                <br>
+                <br><br><input type="submit" value="Submit">
+            </form>
+        <div id="result">
+            <p id="submissionResult"></p>
+          </div>
+    </div>
+    <script>
+        function submitForm(event) {
+          event.preventDefault();
+    
+          let firstName = document.getElementById("fname").value;
+          let lastName = document.getElementById("lname").value;
+          let dob = document.getElementById("birthday").value;
+          let email = document.getElementById("email").value;
+          let message = document.getElementById("message").value;
+    
+
+          let result = "Hello, " + firstName + " " + lastName + ".<br><br>";
+          result = result + "You've submitted the form which concludes that your Email ID is " + email + " and your DOB is " + dob + ".<br><br>";
+          result = result + "We've received your message, which is:<br>" + message + "<br><br>";
+          result = result + "Thank you!";
+          document.getElementById("submissionResult").innerHTML = result;
+
+          
+        }
+      </script>
+</body>
+
+</html>
